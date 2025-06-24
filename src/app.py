@@ -20,13 +20,7 @@ app.mount("/static", StaticFiles(directory=os.path.join(Path(__file__).parent,
           "static")), name="static")
 
 # In-memory activity database
-activities = {# ...existing code...
-# Validate student is not already signed up
-if email in activity["participants"]:
-    raise HTTPException(status_code=400, detail="Student is already signed up")
-# Add student
-activity["participants"].append(email)
-# ...existing code...
+activities = {
     "Chess Club": {
         "description": "Learn strategies and compete in chess tournaments",
         "schedule": "Fridays, 3:30 PM - 5:00 PM",
